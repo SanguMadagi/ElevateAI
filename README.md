@@ -33,7 +33,6 @@
   - [5. Run Frontend](#5-run-frontend)
 - [API Reference](#-api-reference)
 - [Testing & Quality Assurance](#-testing--quality-assurance)
-- [License](#-license)
 
 ---
 
@@ -333,8 +332,3 @@ mvn test
 cd frontend
 npm run build
 ```
-
----
-
-## 📄 License
-This project is open-source software licensed under the **MIT License**.
