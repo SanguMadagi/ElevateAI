@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production / Build Artifacts
+dist/
+build/
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime / User Generated Workspace Data
+# Runtime / User Generated Workspace & Upload Data
+backend/career_workspaces/
+career_workspaces/
+backend/uploads/
+uploads/
+*.tmp
+*.temp
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test Coverage
+coverage/

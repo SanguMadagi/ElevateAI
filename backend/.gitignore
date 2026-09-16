@@ -1,0 +1,30 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.ear
+
+# User Generated Workspaces
+# User Generated Workspaces & Uploads
+career_workspaces/
+uploads/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+/src/main/resources/application-local.yml
+
+# Logs
+*.log
+
+# IDEs & System
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/

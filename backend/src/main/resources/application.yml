@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: ai-interview-system
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/ai-interview}
+      database: ${MONGODB_DATABASE:ai-interview}
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mariadb://localhost:3307/aiinterview_ai}
+    username: ${SPRING_DATASOURCE_USERNAME:aiuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:aipassword}
+    driver-class-name: org.mariadb.jdbc.Driver
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+          ssl:
+            trust: "*"
+  ai:
+    model:
+      chat: google-genai
+      embedding:
+        text: google-genai
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY:}
+        chat:
+          model: ${GEMINI_MODEL:gemini-3.6-flash}
+          temperature: 0.7
+        embedding:
+          api-key: ${GEMINI_API_KEY:}
+          text:
+            model: gemini-embedding-001
+    vectorstore:
+      redis:
+        initialize-schema: true
+        index-name: career-knowledge
+        prefix: "career-embedding:"
+
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:}
+
+jwt:
+  secret: ${JWT_SECRET:aiinterview-secret-key-2024}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:aiinterview-secret-key-2024}
+    expiration: 86400000
+
+logging:
+  level:
+    com.ai.interview: INFO
+    org.springframework.data.mongodb: WARN
+
+server:
+  port: 8080

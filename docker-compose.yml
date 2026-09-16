@@ -1,0 +1,29 @@
+services:
+
+  mongodb:
+    image: mongo:7
+    container_name: aiinterview-mongodb
+    ports: ["27017:27017"]
+    volumes: [mongodb_data:/data/db]
+    environment:
+      MONGO_INITDB_DATABASE: aiinterview
+
+  redis:
+    image: redis/redis-stack:7.2.0-v18
+    container_name: aiinterview-redis
+    ports: ["6379:6379"]
+
+  mariadb:
+    image: mariadb:11.2
+    container_name: aiinterview-mariadb
+    ports: ["3307:3306"]
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpassword
+      MARIADB_DATABASE: aiinterview_ai
+      MARIADB_USER: aiuser
+      MARIADB_PASSWORD: aipassword
+    volumes: [mariadb_data:/var/lib/mysql]
+
+volumes:
+  mongodb_data:
+  mariadb_data:
